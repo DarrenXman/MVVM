@@ -44,7 +44,7 @@
         _homeTableView=[[HomeTableView alloc]initWithFrame:self.view.bounds];
         [_homeTableView setDelegate:self];
         [_homeTableView setDataSource:self];
-        [_homeTableView setRowHeight:100.0];
+        [_homeTableView setRowHeight:80.0];
     }
     return _homeTableView;
 }
@@ -58,7 +58,7 @@
         
         [wSelf.dataArr removeAllObjects];
         [wSelf.dataArr addObjectsFromArray:arr];
-        dispatch_sync(dispatch_get_main_queue(), ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
             [wSelf.homeTableView reloadData];
         });
         
@@ -81,6 +81,8 @@
     if (!cell) {
         cell=[[HomeTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIde];
     }
+    
+    [cell setData:self.dataArr[indexPath.row]];
     
     return cell;
 }

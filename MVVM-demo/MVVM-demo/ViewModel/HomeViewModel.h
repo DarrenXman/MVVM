@@ -8,12 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void (^callback) (NSArray *array);
-
 @interface HomeViewModel : NSObject
 
 //处理网络获取的数据
 - (void)handleDataWithSuccess:(void (^)(NSArray *arr))success
-                             failure:(void(^)(NSError *error))failure;
+                      failure:(void(^)(NSError *error))failure;
 
 @end

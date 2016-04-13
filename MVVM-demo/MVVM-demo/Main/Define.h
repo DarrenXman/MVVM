@@ -21,7 +21,9 @@
 
 #define UICOLOR_FROM_RGB(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
 #define kAppWhiteColor [UIColor whiteColor]//白色
+#define kAppDarkGrayColor [UIColor darkGrayColor]   //深灰色
 #define kAppGrayColor [UIColor grayColor]//灰色
+
 
 //弱引用
 #define __WeakSelf__ __weak typeof (self)
